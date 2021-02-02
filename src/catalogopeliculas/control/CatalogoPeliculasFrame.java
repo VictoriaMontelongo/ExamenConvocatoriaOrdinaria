@@ -18,14 +18,14 @@ import javax.swing.JPanel;
 
 
 public class CatalogoPeliculasFrame extends JFrame{
-    private final Film film;
+    private final Film[] film;
     private final List<Film> lista;
     //private final Listas listas;
     private FilmDialog filmDialog;
     private FilmDisplay filmDisplay;
     private final Map<String, Command> commands = new HashMap<>();
     
-    public CatalogoPeliculasFrame(Film film){
+    public CatalogoPeliculasFrame(Film[] film){
         this.film = film;
         lista = new ArrayList<>();
         this.setTitle("Catálogo Películas");

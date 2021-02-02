@@ -12,6 +12,7 @@ public class CatalogoPeliculas {
 
     
     public static void main(String[] args) {
+        Film[] peli = null;
         Film film = null;
         
         Listas listasG = new Genre(film);
@@ -19,7 +20,7 @@ public class CatalogoPeliculas {
         Listas listasS = new MostSeen(film);
         Listas listasV = new MostValued(film);
         
-        CatalogoPeliculasFrame peliculasFrame = new CatalogoPeliculasFrame(film);
+        CatalogoPeliculasFrame peliculasFrame = new CatalogoPeliculasFrame(peli);
         peliculasFrame.add(new AddCommand(peliculasFrame.getFilmDialog(), peliculasFrame.getFilmDisplay()));
 
     }
