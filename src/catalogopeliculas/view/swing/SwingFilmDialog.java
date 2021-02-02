@@ -18,10 +18,16 @@ public class SwingFilmDialog extends JPanel implements FilmDialog{
 
     private Film film;
     private List<Film> films;
+    private final Film[] pelis;
     
-    public SwingFilmDialog(Film film) {
-        this.film = film;
+    public SwingFilmDialog(Film[] pelis) {
+        this.pelis = pelis;
         films = new ArrayList<>();
+        this.add(genre());
+        this.add(news());
+        this.add(mostSeen());
+        this.add(mostValued());
+        
     }
     
     @Override
@@ -31,28 +37,28 @@ public class SwingFilmDialog extends JPanel implements FilmDialog{
     }
     
     private Component genre() {
-        JComboBox comboGenre = new JComboBox((ComboBoxModel) films);
+        JComboBox comboGenre = new JComboBox();
         comboGenre.addItemListener(getFilms());
         films = (List<Film>) comboGenre.getSelectedItem();
         return comboGenre;
     }
     
     private Component news() {
-        JComboBox comboNews = new JComboBox((ComboBoxModel) films);
+        JComboBox comboNews = new JComboBox();
         comboNews.addItemListener(getFilms());
         films = (List<Film>)comboNews.getSelectedItem();
         return comboNews;
     }
     
     private Component mostSeen() {
-        JComboBox comboSeen = new JComboBox( (ComboBoxModel) films);
+        JComboBox comboSeen = new JComboBox();
         comboSeen.addItemListener(getFilms());
         films = (List<Film>) comboSeen.getSelectedItem();
         return comboSeen;
     }
     
     private Component mostValued() {
-        JComboBox comboValued = new JComboBox((ComboBoxModel) films);
+        JComboBox comboValued = new JComboBox();
         comboValued.addItemListener(getFilms());
         films = (List<Film>) comboValued.getSelectedItem();
         return comboValued;
