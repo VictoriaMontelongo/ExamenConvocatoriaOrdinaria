@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Vector;
 import javax.swing.ComboBoxModel;
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 
@@ -23,9 +24,13 @@ public class SwingFilmDialog extends JPanel implements FilmDialog{
     public SwingFilmDialog(Film[] pelis) {
         this.pelis = pelis;
         films = new ArrayList<>();
+        this.add(new JLabel("Géneros"));
         this.add(genre());
+        this.add(new JLabel("Novedades"));
         this.add(news());
+        this.add(new JLabel("Más Vistas"));
         this.add(mostSeen());
+        this.add(new JLabel("Más Valoradas"));
         this.add(mostValued());
         
     }
